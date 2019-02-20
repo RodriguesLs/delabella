@@ -11,29 +11,11 @@
     <main>
         <section class="table-area clearfix">
             <div class="table-col-1-2">
-                <% @orders.each do |order| %>
-                    <% if order.active? %>
-                        <label>Mesa: <%= order.table %></label>    
-                        <%= order.products.name %>
-                        || Quantidade: <%= order.quantity %> 
-                        <hr>
-                    <% end %>
-                <% end %>
+            
             </div>
             
             <div class="table-col-2-2">
-                <% Order.all.each do |order| %>
-                    <% if order.active? %>
-                            <%= order.products.name %>
-                            <%= order.quantity %>
-                            <label> Mesa:
-                            <%= order.table %> </label>
-                            <%= link_to 'Adicionar item', edit_order_path(order) %>
-                        <hr>
-                    <% end %>
-                <% end %>
                 <%= link_to 'Abrir comanda', new_order_path %>
-                
             </div>
         </section>
     </main>

@@ -12,25 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :status %>
-    <%= f.number_field :status %>
-  </div>
-
-  <div class="field">
     <%= f.label :table %>
     <%= f.number_field :table %>
   </div>
 
-  
-   
-    <%= f.fields_for :order_products do |t| %>
-      <div class="field">
-        <%= t.label :product_id %>
-        <%= t.number_field :product_id %>
-      </div>
+  <div class="field">
+    <%= f.label 'Products' %>
+    <%# aqui é um checkbox normal só que dentro de um for que passa por todos os produtos para poder listar todos os produtos disponiveis %>
+    <% Product.all.each do |product| %>
+      <label>  
+        <%= check_box :order, :product_ids, { multiple: true }, product.id %>
+        <%= product.name %>
+      </label>
+        <%= number_field :orders_products, :quantity %>
     <% end %>
-    
-  
+  </div>
 
   <div class="actions">
     <%= f.submit %>
