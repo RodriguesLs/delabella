@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
-    def index
-        @orders = Order.all
-    end
+  before_action :orders, only: %i[index]
+
+  def index; end
+
+  private
+
+  def orders
+    @orders ||= Order.all
+  end
 end

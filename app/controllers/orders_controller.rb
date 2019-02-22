@@ -1,28 +1,20 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :order, only: %i[show edit update destroy]
 
-  # GET /orders
-  # GET /orders.json
   def index
-    @orders = Order.all
+    orders
   end
 
-  # GET /orders/1
-  # GET /orders/1.json
-  def show
-  end
+  def show; end
 
-  # GET /orders/new
   def new
-    @order = Order.new
+    order
   end
 
-  # GET /orders/1/edit
   def edit
+    order
   end
 
-  # POST /orders
-  # POST /orders.json
   def create
     @order = Order.new(order_params)
     @order.status = 0
@@ -38,24 +30,20 @@ class OrdersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
   def update
     respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
+      if order.update(order_params)
+        format.html { redirect_to order, notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: order }
       else
         format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json { render json: order.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /orders/1
-  # DELETE /orders/1.json
   def destroy
-    @order.destroy
+    order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
@@ -63,18 +51,28 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:status, :table, orders_products: [:quantity]).merge(products_params)
-    end
+  def orders
+    @orders ||= Order.all
+  end
 
-    def products_params
-      # Aqui eu to removendo dos parametros qualquer valor igual a zero pois zero é enviado quando o check_box ta como falso.
-      { product_ids: params[:order][:product_ids] - ['0']}
-    end
+  def order
+    @order ||= id.present? ? Order.find(id) : Order.new
+  end
+
+  def id
+    @id ||= params[:id]
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    # TODO: Refatorar
+    params.require(:order).permit(:status, :table, orders_products: %i[quantity]).merge(products_params)
+  end
+
+  def products_params
+    # TODO: Refatorar
+    # Aqui eu to removendo dos parametros qualquer valor igual a zero pois zero é enviado quando o check_box ta como falso.
+    { product_ids: params[:order][:product_ids] - ['0']}
+  end
 end

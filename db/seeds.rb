@@ -1,11 +1,11 @@
 Product.create!(
-    name: "Potato"
+    name: 'Potato'
 )
 Product.create!(
-    name: "Sinuca"
+    name: 'Sinuca'
 )
 Product.create!(
-    name: "Cerveja"
+    name: 'Cerveja'
 )
 
 10.times do
