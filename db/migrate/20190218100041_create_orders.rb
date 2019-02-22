@@ -1,8 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[5.0]
   def change
     create_table :orders do |t|
-      t.integer :status
-      t.integer :table
+      t.integer :status, null: false, default: 0
 
       t.timestamps
     end
