@@ -19,9 +19,7 @@ Product.create!(
 
 10.times do
     Order.create!(
-        product: Product.all.sample,
-        quantity: Random.rand(3),
-        status: [0,1].sample,
-        table: Random.rand(20)
+        products: Product.all,
+        quantity: Random.rand(3)
     )
 end
