@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@charset "UTF-8";
+
 body {
     font-family: serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 33px;
 }
 
 .clearfix:after {
@@ -12,20 +20,63 @@ body {
     display: block;
 }
 
+.top-header {
+    padding: 2em 1em 1em 2em;
+    box-sizing: border-box;
+    background-image: url("images/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 40em;
+    width: 100%;
+    color: white;
+}
+
+.top-header h1 {
+    display: inline-block;
+    margin: 2em;
+}
+
+.top-main {
+    padding: 2em;
+    margin: 2em;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Laila';
+    color: red;
+    font-size: 2em;
+}
+
+.top-main h2 {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.icons-content{
+    margin: 0 15em;
+}
+
+.art-icon {
+    margin: 1em 3em;
+    text-align: center;
+    display: inline-block;
+}
+.icon-img {
+    height: 15em;
+    width: 15em;
+}
+
 .top-nav {
-    border: 1px solid black;
     text-align: right;
-    background-color: #892389;
     height: 5em;
-    border-radius: 10px;
     padding-right: 1em;
+    width: 60%;
+    float: right;
 }
 
 .top-nav ul{
     display: inline-block;
     list-style: none;
-    margin: 1em 0 .2em 0;
-    padding: 0;
 }
 
 .top-nav li{
@@ -36,8 +87,7 @@ body {
     border-radius: 10px;
     text-align: center;
     height: 2.5em;
-    overflow: hidden;
-    
+    overflow: hidden;   
 }
 
 .top-nav a{
@@ -87,4 +137,104 @@ body {
 .table-div {
     border: 1px solid black;
     margin: 1em; 
+}
+
+.middle-bot-content {
+    text-align: center;
+    padding: 3em;
+    height: 8em;
+    background-image: url(images/header.png);
+    background-size: cover;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.btn {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #f2581a;
+    width: 20em;
+    height: 4em;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.btn a {
+    margin: 0;
+    padding: 1.2em 1.5em;
+    display: block;
+    transition: all .3s linear;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+}
+
+.btn a:visited {
+    color: white;
+}
+
+.btn a:hover {
+    background-color: #f44702;
+    color: #ccc;
+}
+
+.footer-content {
+    margin-top: 2px;
+    padding-top: 1em;
+    padding-left: 10em;
+    background-color: #3a3a3a;
+    color: white;
+    text-align: left;
+    height: 5em;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    .top-header {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .top-nav {
+        width: 100%;
+        height: 13em;
+        display: block;
+        clear: both;
+        background-color: #f44702;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .top-nav ul{
+        display: block;
+        overflow: auto;
+    }
+
+    .top-nav li{
+        margin: 0;
+        border-radius: none;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        clear: both;
+        display: block;
+        width: 100%;
+    }
+
+    .icons-content {
+        text-align: center;
+        margin: auto;
+    }
+
+    .icon-img {
+        display: block;
+        height: 10em;
+        width: 10em;
+    }
+
+    .top-main {
+        line-height: 1;
+        margin: auto;
+        font-size: 1.3em;
+    }
 }

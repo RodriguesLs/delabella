@@ -1,3 +1,4 @@
+<main class="form-content">
 <%= form_for(product) do |f| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, 'Produto' %>
     <%= f.text_field :name %>
   </div>
 
@@ -20,3 +21,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</main>
