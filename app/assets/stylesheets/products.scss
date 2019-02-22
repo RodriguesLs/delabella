@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-    background-image: url('images/header.png')
+/* body {
+    background-image: url('images/header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .h1-new {
@@ -24,13 +26,14 @@ body {
     margin-bottom: 1em;
 }
 
-.btn{
+.btn, .form-content input[type="submit"]{
     border-radius: 10px;
     border: none;
     padding: .5em;
     background-color: orangered;
+    transition: all .3s linear;
 }
 
-.form-content a{
-
-}
+.btn:hover, .form-content input[type="submit"]:hover {
+    background-color: white;
+} */
