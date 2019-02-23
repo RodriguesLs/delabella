@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'faker'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.13'
 gem 'devise'
@@ -41,7 +42,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'factory_bot'
-  gem 'faker'
 end
 
 group :development do
