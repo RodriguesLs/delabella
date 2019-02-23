@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<form class="form-content show">
 <p>
   <strong>Status:</strong>
   <%= @order.status %>
 </p>
-
 
 <p>
 <strong>Quantidade:</strong>
@@ -15,7 +15,6 @@
   <%= @order.products.pluck(:name).to_sentence %>
 </p>
 
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Edit', edit_order_path(@order), class:'btn' %>
+<%= link_to 'Back', orders_path, class:'btn' %>
+</form>

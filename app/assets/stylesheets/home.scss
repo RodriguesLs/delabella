@@ -36,15 +36,22 @@ main {
     display: inline-block;
     margin: 2em;
 }
+.main {
+    background-image: none;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
 
 .top-main {
-    padding: 2em;
-    margin: 2em;
+    padding: 2em 3em;
     border-bottom: 1px solid #ccc;
     text-align: center;
     font-family: 'Laila';
     color: red;
     font-size: 2em;
+    background-image: none;
+    background-color: white;
 }
 
 .top-main h2 {

@@ -1,11 +1,11 @@
 <div class="nested-fields">
     <div class="field">
-        <%= f.label :product_id %>
-        <%= f.select("product_id", Product.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })%>
-        <%= f.label :quantity %>
+        <%= f.label :product_id, 'Produto' %>
+        <%= f.select("product_id", Product.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, autofocus: true)%>
+        <%= f.label :quantity, 'Quantidade' %>
         <%= f.number_field :quantity %>
         <br>
-        <%= link_to_remove_association('remover', f) %>
+        <%= link_to_remove_association('Remover', f) %>
         <hr>
     </div>
 </div>

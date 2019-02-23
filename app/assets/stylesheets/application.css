@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .new-costumer {
+     border-radius: 10px;
+     border: 2px solid white;
+     background-color: white;
+     margin: auto;
+     padding: 2em;
+ }
