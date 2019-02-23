@@ -12,12 +12,10 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    order
   end
 
   def create
     @order = Order.new(order_params)
-    @order.status = 0
 
     respond_to do |format|
       if @order.save
@@ -67,12 +65,12 @@ class OrdersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
     # TODO: Refatorar
-    params.require(:order).permit(:status, :table, orders_products: %i[quantity]).merge(products_params)
+    params.require(:order).permit(:status, order_products_attributes: %i[product_id quantity])  
   end
 
-  def products_params
+  #def products_params
     # TODO: Refatorar
     # Aqui eu to removendo dos parametros qualquer valor igual a zero pois zero é enviado quando o check_box ta como falso.
-    { product_ids: params[:order][:product_ids] - ['0']}
-  end
+   # { product_ids: params[:order][:product_ids]}
+  #end
 end
