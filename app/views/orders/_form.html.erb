@@ -11,14 +11,15 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.fields_for :order_products, @order.order_products.build do |o| %>
-        <%= o.label :product_id %>
-        <%= o.number_field :product_id %>
-        <%= o.label :quantity %>
-        <%= o.number_field :quantity %>
-        <hr>
+    <%= f.fields_for :order_products do |o| %>
+        <%= render partial: "order_products_fields", locals: { f: o} %>
     <% end %>
+
+    <div class="field">
+      <%= link_to_add_association('[Adicionar Produto]', f, :order_products, partial: 'order_products_fields') %><br/>
+    </div>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

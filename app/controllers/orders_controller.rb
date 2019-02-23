@@ -9,9 +9,11 @@ class OrdersController < ApplicationController
 
   def new
     order
+    order.order_products.build
   end
 
   def edit
+    order
   end
 
   def create
@@ -65,7 +67,7 @@ class OrdersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
     # TODO: Refatorar
-    params.require(:order).permit(:status, order_products_attributes: %i[product_id quantity])  
+    params.require(:order).permit(:status, order_products_attributes: %i[id product_id quantity])  
   end
 
   #def products_params
