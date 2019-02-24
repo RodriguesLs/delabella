@@ -1,0 +1,18 @@
+<h1 class="h1-new">Menu</h1>
+<form class="form-content index">
+  <div class='row-title'>
+    <label class='col-1 col-title'>Produto</label>
+    <label class='col-2 col-title'>Preço</label>
+  </div>
+
+  
+    <% @products.each do |product| %>
+        <div class='row'>
+          <label class='col-1'><%= product.name %></label>
+          <label class='col-2'><%= humanized_money_with_symbol(product.price) %></label>
+        </div>
+    <% end %>
+  
+<br>
+<%= link_to 'Página Principal', root_path, class: "btn" %>
+</form>

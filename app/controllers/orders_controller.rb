@@ -12,6 +12,10 @@ class OrdersController < ApplicationController
     order.order_products.build
   end
 
+  def add_item
+    @client = Cliente.find(id)
+  end
+
   def edit
     order
   end
@@ -67,12 +71,6 @@ class OrdersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
     # TODO: Refatorar
-    params.require(:order).permit(:status, order_products_attributes: %i[id product_id quantity])  
+    params.require(:order).permit(:status, :cliente_id, order_products_attributes: %i[id product_id quantity])  
   end
-
-  #def products_params
-    # TODO: Refatorar
-    # Aqui eu to removendo dos parametros qualquer valor igual a zero pois zero é enviado quando o check_box ta como falso.
-   # { product_ids: params[:order][:product_ids]}
-  #end
 end

@@ -55,7 +55,21 @@ body {
     border: none;
     border-bottom: 1px solid #ccc;
     text-align: center;
+}
 
+.form-content input[type="email"]{
+    margin-bottom: 1em;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+.form-content input[type="password"]{
+    margin-bottom: 1em;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 
 .btn {

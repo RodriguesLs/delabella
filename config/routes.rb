@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :orders
   resources :products
+  resources :menu
   root 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'add_item/:id', to: 'orders#add_item', as: 'add_item'
 end

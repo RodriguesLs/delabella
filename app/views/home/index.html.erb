@@ -3,9 +3,14 @@
     <nav class="top-nav">
         <ul>
             <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'Produtos', new_product_path %></li>
-            <li><%= link_to 'Aplicativo', orders_path %></li>
+            <li><%= link_to 'Cardápio', menu_index_path %></li>
             <li><a href="#">Contato</a></li>
+                <% unless cliente_signed_in? %>
+                    <li><%= link_to 'Login', new_cliente_session_path %></li>
+                <%else%>
+                    <li><%= link_to 'Comanda', add_item_path(current_cliente) %></li>  
+                    <li><%= link_to 'Sair', destroy_cliente_session_path, method: :delete %></li>
+                <%end%>
         </ul>
     </nav>
 </header>    

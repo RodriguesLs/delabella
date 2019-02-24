@@ -11,6 +11,12 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :cliente_id, 'Cliente' %>
+    <%= f.select("cliente_id", Cliente.all.collect {|c| [ c.cpf, c.id ] }, { include_blank: true }, autofocus: true)%>
+  </div>
+  
   <div class="field">
     <%= f.fields_for :order_products do |o| %>
         <%= render partial: "order_products_fields", locals: { f: o} %>

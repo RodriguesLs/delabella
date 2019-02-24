@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ 
+.h1-new-plus-size {
+    font-size: 2.5em;
+    margin: 1.5em;
+}
 
- .new-costumer {
-     border-radius: 10px;
-     border: 2px solid white;
-     background-color: white;
-     margin: auto;
-     padding: 2em;
- }
+select{
+    display: inline-block;
+}

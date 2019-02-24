@@ -1,0 +1,16 @@
+<h1 class="h1-new">Fazer Pedido</h1>
+<form class="form-content">
+    <% @client.orders.each do |o| %>
+      <%if o.status == 'active' %>
+        <%= o.id %>
+        <%= o.status %>
+        <%= o.products.pluck(:name).to_s %>
+        <br>
+        <br>
+        <%= link_to 'Adicionar produto', edit_order_path(o), class: 'btn'%>
+        <br>
+        <br>
+        <hr>
+      <%end%>
+    <%end%>
+</form>

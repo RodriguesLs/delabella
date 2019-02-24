@@ -1,0 +1,29 @@
+.row-title {
+    clear: both;
+    margin-bottom: 1em;
+}
+
+.row {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+.col-1, .col-2 {
+    float: center;
+    width: 30%;
+}
+
+.col-title {
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: .3em .1em;
+    border: 1px solid red;
+}
+
+.col-1 {
+    
+}
+
+.col-2 {
+    margin-left: .5em;
+}
