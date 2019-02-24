@@ -15,6 +15,12 @@
   <%= @order.products.pluck(:name).to_sentence %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order), class:'btn' %>
-<%= link_to 'Back', orders_path, class:'btn' %>
+<%= link_to 'Editar pedido', edit_order_path(@order), class:'btn' %>
+
+<%unless cliente_signed_in?%>
+  <%= link_to 'Voltar', orders_path, class: 'btn' %>
+<%else%>
+  <%= link_to 'Voltar', add_item_path(current_cliente), class: 'btn'%>
+<%end%>
+
 </form>

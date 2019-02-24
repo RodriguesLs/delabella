@@ -116,7 +116,37 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    bodey {
+    body {
         background-size: cover;
     }
+
+    .form-content {
+        width: 70%;
+        margin: auto;
+        padding: 2em;
+    }
+
+    .col-title {
+        font-size: 1em;
+        border-radius: 0;
+        border: none;
+        padding: .3em .1em;
+        
+    }
+
+    .row-title {
+        border-bottom: 1px solid red;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .col-1 {
+        text-align: left;
+        margin-right: 3em;
+    }
+    .col-1, .col-2 {
+        font-size: 1.2em;
+    }
+
 }
