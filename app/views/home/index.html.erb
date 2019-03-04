@@ -13,6 +13,7 @@
                 <%elsif admin_signed_in?%>
                     <li><%= link_to 'Abrir comanda', new_order_path %></li>
                     <li><%= link_to 'Comandas', orders_path %></li>
+                    <li><%= link_to 'Produtos', products_path %></li>
                     <li><%= link_to 'Sair', destroy_admin_session_path, method: :delete %></li>
                 <%else%>
                     <li><%= link_to 'Login', new_cliente_session_path %></li>
