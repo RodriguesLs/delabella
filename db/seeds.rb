@@ -15,11 +15,6 @@ Product.create!(
 p 'Produtos criados'
 
 Cliente.create!(
-    email: 'lies@lies',
-    password: '190195',
-    cpf: '426.442.538-70'
-)
-Cliente.create!(
     email: 'pedro@pedro',
     password: '190195',
     cpf: '121.235.948-81'
