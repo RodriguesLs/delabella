@@ -16,6 +16,13 @@ class OrdersController < ApplicationController
     @client = Cliente.find(id)
   end
 
+  def close_order
+    order
+    order.status = 1
+    order.save
+    redirect_to order
+  end
+
   def edit
     order
   end

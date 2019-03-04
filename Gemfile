@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails-i18n'
+gem 'cpf_cnpj', '~> 0.2.1'
 gem 'devise'
 gem 'money-rails', '~>1.12'
 gem 'cocoon'

@@ -7,6 +7,7 @@
     <tr>
       <th class="th-index">Status</th>
       <th class="th-index space-c">Produto</th>
+      <th class="th-index space-c">Cliente</th>
       <th colspan="10"></th>
     </tr>
   </thead>
@@ -16,8 +17,8 @@
       <tr>
         <td><%= order.status %></td>
         <td class="space"><%= order.products.pluck(:name).to_sentence %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Editar', edit_order_path(order) %></td>
+        <td><%= link_to 'Encerrar', order %></td>
       </tr>
     <% end %>
   </tbody>

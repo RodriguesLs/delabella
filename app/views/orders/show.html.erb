@@ -6,18 +6,22 @@
   <%= @order.status %>
 </p>
 
-<p>
-<strong>Quantidade:</strong>
-  <%= @order.products.pluck(:quantity).to_sentence %>
-</p>
+<% @order.order_products.each do |o| %>
+  <%= o.quantity.to_i %>
+<% end %>
 
+<p>
 <strong>Product:</strong>
-  <%= @order.products.pluck(:name).to_sentence %>
+  <% @order.products.each do |p| %>
+    <%= p.name %>
+    <%= humanized_money_with_symbol(p.price) %> ||
+  <% end %>
 </p>
 
 <%= link_to 'Editar pedido', edit_order_path(@order), class:'btn' %>
 
 <%unless cliente_signed_in?%>
+  <%= link_to 'Encerrar', close_path(@order), class: 'btn' %>
   <%= link_to 'Voltar', orders_path, class: 'btn' %>
 <%else%>
   <%= link_to 'Voltar', add_item_path(current_cliente), class: 'btn'%>

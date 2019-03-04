@@ -2,14 +2,20 @@
     <h1> DelaBella Projetc </h1>
     <nav class="top-nav">
         <ul>
-            <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'Cardápio', menu_index_path %></li>
-            <li><a href="#">Contato</a></li>
-                <% unless cliente_signed_in? %>
-                    <li><%= link_to 'Login', new_cliente_session_path %></li>
-                <%else%>
+            <li><%= link_to 'Contato', contacts_path %></li>
+            
+                <% if cliente_signed_in? %>
                     <li><%= link_to 'Comanda', add_item_path(current_cliente) %></li>  
+                    <li><%= link_to 'Histórico', '#' %></li>  
                     <li><%= link_to 'Sair', destroy_cliente_session_path, method: :delete %></li>
+                    
+                <%elsif admin_signed_in?%>
+                    <li><%= link_to 'Abrir comanda', new_order_path %></li>
+                    <li><%= link_to 'Comandas', orders_path %></li>
+                    <li><%= link_to 'Sair', destroy_admin_session_path, method: :delete %></li>
+                <%else%>
+                    <li><%= link_to 'Login', new_cliente_session_path %></li>
                 <%end%>
         </ul>
     </nav>
@@ -47,18 +53,9 @@
 </main>
 <section class="middle-bot-content">
     <h2>Comemore sua festa conosco!</h2>
-    <%= link_to 'Reserve aqui!', root_path ,class: 'btn' %>
+    <%= link_to 'Reserve aqui!', reserv_path ,class: 'btn' %>
 </section>
 
 <footer class="footer-content">
-    <p> Copyright 2019 </P>
+    <p> Copyright &copy <%= Date.current.year %> </P>
 </footer>
-        <!-- <section class="table-area clearfix">
-            <div class="table-col-1-2">
-            
-            </div>
-            
-            <div class="table-col-2-2">
-                <%= link_to 'Abrir comanda', new_order_path %>
-            </div>
-        </section> -->
