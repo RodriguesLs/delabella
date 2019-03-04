@@ -103,7 +103,7 @@ main {
 
 .top-nav a{
     text-decoration: none;
-    padding: .5em;
+    padding: .45em;
     box-sizing: border-box;
     margin: 0;
     display: block;
@@ -114,6 +114,8 @@ main {
 
 .top-nav a:hover {
     background-color: #b82e8a;
+    padding: auto;
+
 }
 
 .top-nav a:visited {
