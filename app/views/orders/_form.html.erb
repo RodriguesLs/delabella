@@ -14,7 +14,7 @@
   
   <div class="field">
     <%= f.label :cliente_id, 'Cliente' %>
-    <%= f.select("cliente_id", Cliente.all.map {|c| [ c.cpf, c.id ] }, { include_blank: true }, autofocus: true)%>
+    <%= f.select("cliente_id", Cliente.all.collect {|c| [ c.cpf, c.id ] }, { include_blank: true }, autofocus: true)%>
   </div>
   
   <div class="field">
