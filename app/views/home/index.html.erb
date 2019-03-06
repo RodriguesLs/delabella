@@ -20,6 +20,9 @@
                 <%end%>
         </ul>
     </nav>
+    <% if cliente_signed_in? %>
+        <h1>Seja bem-vindo <u><%= current_cliente.email %></u></h1>
+    <%end%>
 </header>    
 <main class="main">
     <section class="top-main">

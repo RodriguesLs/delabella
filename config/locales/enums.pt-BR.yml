@@ -1,0 +1,6 @@
+'pt-BR':
+  enums:
+    order:
+      status:
+        active: Ativo
+        archieve: Pago

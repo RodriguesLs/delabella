@@ -4,9 +4,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+gem 'enum_help'
 gem 'rails-i18n'
 gem 'cpf_cnpj', '~> 0.2.1'
 gem 'devise'
+gem 'devise-i18n'
 gem 'money-rails', '~>1.12'
 gem 'cocoon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

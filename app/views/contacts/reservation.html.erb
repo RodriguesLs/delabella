@@ -1,20 +1,26 @@
 <h1 class="h1-new">Formulário de reserva</h1>
-<form class="form-content">
-    <label>Nome: </label>
-    <input type="text">
-    <label>Email: </label>
-    <input type="email">
-    <label>Telefone: </label>
-    <input type="email">
-    <label>Data pretendida:</label>
+<form class="form-content minium">
+    <div class=field>
+        <label>Nome: </label>
+        <input type="text">
+    </div>
+    <div class=field>
+        <label>Email: </label>
+        <input type="email">
+    </div>
+    <div class=field>
+        <label>Telefone: </label>
+        <input type="email">
+    </div>
+    <div class=field>
+        <label>Data pretendida:</label>
+        <input type="date">
+    </div>
     <br>
-    <input type="date" default=''>
-    <br>
+    <div class=field>
     <label>Mensagem: </label>
-    <br>
     <textarea rows="7" cols="30"> </textarea>
-    <br>
-    <br>
+    </div>
         <%= link_to 'Enviar', '#', class: 'btn'%>
         <%= link_to 'Voltar', root_path, class: 'btn'%>
 </form>
