@@ -3,8 +3,9 @@
     <nav class="top-nav">
         <ul>
             <li><%= link_to 'Cardápio', menu_index_path %></li>
-            <li><%= link_to 'Contato', contacts_path %></li>
-            
+            <%unless admin_signed_in? %>
+                <li><%= link_to 'Contato', contacts_path %></li>
+            <%end%>
                 <% if cliente_signed_in? %>
                     <li><%= link_to 'Comanda', add_item_path(current_cliente) %></li>  
                     <li><%= link_to 'Histórico', '#' %></li>  
@@ -31,7 +32,7 @@
     <section class="icons-content">
         <article class="art-icon">
             <%= image_tag '4.png', class: 'icon-img' %>
-            <h3 class="icon-text">Mesas de Sinuca</h3>
+            <h3 class="icon-text">Snooker bar</h3>
         </article>
         <article class="art-icon">
             <%= image_tag '2.png', class: 'icon-img' %>
@@ -39,18 +40,18 @@
         </article>
         <article class="art-icon">
             <%= image_tag '1.png', class: 'icon-img' %>
-            <h3 class="icon-text">Poker Play</h3>
+            <h3 class="icon-text">Mesas de poker</h3>
         </article>
         <article class="art-icon">
-            <%= image_tag '1.png', class: 'icon-img' %>
-            <h3 class="icon-text">Mesas de Sinuca</h3>
+            <%= image_tag '5.png', class: 'icon-img' %>
+            <h3 class="icon-text">Eventos corporativos</h3>
         </article>
         <article class="art-icon">
             <%= image_tag '3.png', class: 'icon-img' %>
             <h3 class="icon-text">E aquela cerveja gelada!</h3>
         </article>
         <article class="art-icon">
-            <%= image_tag '4.png', class: 'icon-img' %>
+            <%= image_tag '6.jpeg', class: 'icon-img' %>
             <h3 class="icon-text">!</h3>
         </article>
     </section>

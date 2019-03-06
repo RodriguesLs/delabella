@@ -9,15 +9,17 @@
   <% end %>
   <p>
   <% z = 0 %>
-  <strong>Product:</strong>
+  <strong>Produtos na comanda:</strong>
+    <br>
+    <br>
     <% @order.order_products.each do |p| %>
-      <br>
       <% x = p.quantity %>
       <%= p.quantity %>x 
       <%= p.product.name %>
       <%= "---- #{humanized_money_with_symbol(p.product.price)} un" %>
       <% y = p.product.price %>
-      <% z = z + (x * y) %>
+      <% z = z + (x*y) %>
+      <hr>
     <% end %>
     <br> 
     <br>
@@ -26,7 +28,6 @@
 
 
   <%unless cliente_signed_in?%>
-    <%= "Total: " %>
     <br>
     <br>
     <br>
